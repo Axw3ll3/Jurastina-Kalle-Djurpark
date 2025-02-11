@@ -25,3 +25,4 @@ Scenario: Buy 2 Adult and 2 Childen VIP Tickets
     And User Is Able To Purchase 2 Adult VIP Ticket And 2 Child VIP Tickets
     Then User Go To The Cart And Confirm Purchase
     And Terminate Browser Session
+
