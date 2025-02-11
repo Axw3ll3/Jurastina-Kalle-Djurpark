@@ -14,6 +14,7 @@ Scenario: Register Account:
     When User Enters Valid Credentials
     And User Clicks On The Register Button
     Then Register Should Be Successful
+    And Terminate Browser Session
 
 Scenario: Buy 2 Adult and 2 Childen VIP Tickets
     [Documentation]
@@ -21,5 +22,6 @@ Scenario: Buy 2 Adult and 2 Childen VIP Tickets
     Given User Has Registered
     And User Has Logged In
     When User Navigates To Ticket Page
-    Then User Is Able To Purchase 2 Adult VIP Ticket And 2 Child VIP Tickets
-    
+    And User Is Able To Purchase 2 Adult VIP Ticket And 2 Child VIP Tickets
+    Then User Go To The Cart And Confirm Purchase
+    And Terminate Browser Session
