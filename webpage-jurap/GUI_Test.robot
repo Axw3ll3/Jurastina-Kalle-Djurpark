@@ -8,7 +8,7 @@ Variables         variables.py
 *** Test Cases ***
 Scenario: Register Account:
     [Documentation]     Test of registration of a user
-    [Tags]  test    user    registration
+    [Tags]  test    user    registration    Axel
     Given Browser Is Opened To The Webpage
     And User Clicks On The Register Page
     When User Enters Valid Credentials
@@ -18,7 +18,7 @@ Scenario: Register Account:
 
 Scenario: Buy 2 Adult and 2 Childen VIP Tickets
     [Documentation]     Test of buying tickets and safari
-    [Tags]  test    user    buying    tickets   safari
+    [Tags]  test    user    buying    tickets   safari  Axel
     Given User Has Registered
     And User Has Logged In
     When User Navigates To Ticket Page
