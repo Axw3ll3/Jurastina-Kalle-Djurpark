@@ -9,6 +9,7 @@ BROWSER = "chrome"
 
 # Locators
 REGISTER_NAV = "id:register-nav"
+LOGIN_NAV = "id:login-nav"
 TICKETS_NAV = "id:tickets-nav"
 CART_NAV = "id:cart-nav"
 
@@ -17,6 +18,13 @@ REG_USERNAME = "id:reg-username"
 REG_PASSWORD = "id:reg-password"
 REG_SUBMIT = "xpath://button[@type='submit']"
 REG_MESSAGE = "id:register-message"
+
+# Login Locators
+LOGIN_USERNAME = "id:login-username"
+LOGIN_PASSWORD = "id:login-password"
+LOGIN_SUBMIT = "xpath://form[@id='login-form']//button[@type='submit']"
+LOGIN_MESSAGE = "id:login-message"
+
 
 # Ticket Purchase Locators
 TICKET_TYPE = "id:ticket-type"

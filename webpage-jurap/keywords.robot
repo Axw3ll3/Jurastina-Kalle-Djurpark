@@ -34,7 +34,14 @@ User Has Registered
     Sleep    2s    # Wait for registration to complete
 
 User Has Logged In
-
+    Wait Until Element Is Visible    ${LOGIN_NAV}
+    Click Element    ${LOGIN_NAV}
+    Wait Until Element Is Visible    ${LOGIN_USERNAME}
+    Input Text    ${LOGIN_USERNAME}    ${USERNAME}
+    Input Text    ${LOGIN_PASSWORD}    ${PASSWORD}
+    Click Button    ${LOGIN_SUBMIT}
+    Wait Until Element Is Visible    ${TICKETS_NAV}
+    Sleep    2s    # Wait for login to complete
 
 User Navigates To Ticket Page
     Wait Until Element Is Visible    ${TICKETS_NAV}
