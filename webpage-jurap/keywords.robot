@@ -79,5 +79,23 @@ User Go To The Cart And Confirm Purchase
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept    timeout=5s    # Handle any confirmation alert
 
+When User Arrived At The Login Page
+    Click Element    ${LOGIN_NAV}
+    Wait Until Element Is Visible    ${LOGIN_NAV}
+    Element Should Be Visible    ${LOGIN_USERNAME}
+    Element Should Be Visible    ${LOGIN_PASSWORD}
+
+And Filled In Incorrect Credentials
+    Input Text    ${LOGIN_USERNAME}    ${INVALID_USERNAME}
+    Input Text    ${LOGIN_PASSWORD}    ${INVALID_PASSWORD}
+    Click Button    ${LOGIN_SUBMIT}
+
+
+Then An Error Saying Invalid Username Or Password Should Appear
+    Wait Until Element Contains    ${ERROR_MESSAGE}    Invalid username or password.    timeout=10s
+    Element Text Should Be    ${ERROR_MESSAGE}    Invalid username or password.
+    [Teardown]    Close Browser
+
+
 Terminate Browser Session
     Close All Browsers

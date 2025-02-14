@@ -42,4 +42,7 @@ CHECKOUT_BUTTON = "id:checkout-button"
 USERNAME = "BookingBot"
 PASSWORD = "Finneland12"
 EXPECTED_SUCCESS_MESSAGE = "Registration successful"
+INVALID_USERNAME = "wrong_user"
+INVALID_PASSWORD = "wrong_password"
+ERROR_MESSAGE = "id:login-message"
 
