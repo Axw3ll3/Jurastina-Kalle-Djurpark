@@ -26,3 +26,11 @@ Scenario: Buy 2 Adult and 2 Childen VIP Tickets
     Then User Go To The Cart And Confirm Purchase
     And Terminate Browser Session
 
+Scenario: Invalid Login
+    [Documentation]     Test of invalid login with invalid credentials
+    [Tags]     test    user    invalid     Axel
+    Given Browser Is Opened To The Webpage
+    When User Arrived At The Login Page
+    And Filled In Incorrect Credentials
+    Then An Error Saying Invalid Username Or Password Should Appear
+    And Terminate Browser Session
