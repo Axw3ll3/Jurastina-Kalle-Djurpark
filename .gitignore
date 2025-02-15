@@ -1,0 +1,7 @@
+.DS_STORE
+selenium-screenshot-*
+*.pyc
+log.html
+output.xml
+report.html
+.vscode
