@@ -1,7 +1,8 @@
 *** Settings ***
-Documentation     Keywords for Jurastina-Kalle park
-Library           SeleniumLibrary
-Variables         variables.py
+Documentation    Keywords for Jurastina-Kalle park
+Library    SeleniumLibrary
+Variables   variables.py
+Resource   variables.robot
 
 
 *** Keywords ***
@@ -99,3 +100,69 @@ Then An Error Saying Invalid Username Or Password Should Appear
 
 Terminate Browser Session
     Close All Browsers
+
+# Yacine
+User is Able to Purchase Adult Ticket 
+    Click Button    ${ADD_TO_CART}
+    Handle Alert    accept
+    Sleep    2
+
+# Yacine
+User Checks Out
+    Wait Until Element Is Visible    ${CART_NAV}
+    Click Element    ${CART_NAV}
+    Wait Until Element Is Visible    ${CART_DETAILS}
+    Element Should Contain    ${CART_DETAILS}    1 Regular Adult Ticket(s) - $50
+    Click Button    ${CHECKOUT_BUTTON}
+    Handle Alert    accept
+    Close Browser
+
+# Yacine
+User Navigates to Booking Page
+    Title Should be    Jura-Stina-Kalle Park
+    Click Element    ${SAFARI_NAV}
+
+# Yacine
+User is Able to Book Herbivore Tour on a Weekday
+    Click Element    ${SAFARI_DATE}
+    Input Text    ${SAFARI_DATE}    ${VALID_DATE}
+    Click Element    ${SAFARI_TYPE}
+    Click Element    ${SAFARI_TYPE}
+    Wait Until Element Is Visible    ${SAFARI_SUBMIT}
+    Click Button    ${SAFARI_SUBMIT}
+    Handle Alert    accept
+    Sleep    2
+
+# Yacine
+User Checks Out With One Safari Booked
+    Wait Until Element Is Visible    ${CART_NAV}
+    Click Element    ${CART_NAV}
+    Wait Until Element Is Visible    ${CART_DETAILS}
+    Element Should Contain    ${CART_DETAILS}    1 Regular Adult Ticket(s) - $50
+    Element Should Contain    ${CART_DETAILS}    Herbivore Tour on 200025-03-19 - $120
+    Click Button    ${CHECKOUT_BUTTON}
+    Handle Alert    accept
+    Close Browser
+    
+# Yacine
+User is Able to Book T-Rex Rumble on a Weekday
+    Click Element    ${SAFARI_DATE}
+    Input Text    ${SAFARI_DATE}    ${VALID_DATE}
+    Click Element    ${SAFARI_TYPE}
+    Select From List By Value    ${SAFARI_TYPE}    T-Rex Rumble
+    Wait Until Element Is Visible    ${SAFARI_SUBMIT}
+    Click Button    ${SAFARI_SUBMIT}
+    Handle Alert    accept
+    Sleep    2
+    
+# Yacine
+User Checks Out With Two Safaris Booked
+    Wait Until Element Is Visible    ${CART_NAV}
+    Click Element    ${CART_NAV}
+    Wait Until Element Is Visible    ${CART_DETAILS}
+    Element Should Contain    ${CART_DETAILS}    1 Regular Adult Ticket(s) - $50
+    Element Should Contain    ${CART_DETAILS}    Herbivore Tour on 200025-03-19 - $120
+    Element Should Contain    ${CART_DETAILS}    T-Rex Rumble on 200025-03-19 - $150
+    Click Button    ${CHECKOUT_BUTTON}
+    Handle Alert    accept
+    Close Browser
