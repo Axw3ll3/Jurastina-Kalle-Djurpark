@@ -66,3 +66,15 @@ Book Both Herbivore Tour and T-Rex Rumble on a Weekday
     And User is Able to Book Herbivore Tour on a Weekday
     And User is Able to Book T-Rex Rumble on a Weekday
     Then User Checks Out With Two Safaris Booked
+
+Scenario: Successfully booking T-Rex Rumble exTreme Thrill Pack on a weekend
+    [Documentation]    # Test of booking safari for VIP on Saturday and Sunday
+    [Tags]    test    user    booking    safari    Trang
+    Given User Has Registered
+    And User Has Logged In
+    When User Navigates to Ticket Page
+    And User Is Able To Purchase 2 Adult VIP Ticket And 2 Child VIP Tickets
+    Then User Navigates to Booking Page
+    And User is Able to Books T-Rex Rumble exTreme Thrill Pack on Saturday 
+    And User is Able to Books T-Rex Rumble exTreme Thrill Pack on Sunday
+    Then User Checks Out With VIP Tickets And Safaris Booked On The Weekend

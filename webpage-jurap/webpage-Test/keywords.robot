@@ -3,6 +3,7 @@ Documentation    Keywords for Jurastina-Kalle park
 Library    SeleniumLibrary
 Variables   variables.py
 Resource   variables.robot
+Library    DateTime
 
 
 *** Keywords ***
@@ -166,3 +167,47 @@ User Checks Out With Two Safaris Booked
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept
     Close Browser
+
+Check Date Is Weekend
+    [Arguments]    ${date}
+    ${day}=    Evaluate    datetime.datetime.strptime("${date}", "%Y-%m-%d").weekday()    modules=datetime
+    Run Keyword If    ${day} in [5, 6]    Log    ${date} is a weekend.
+    ...    ELSE    Fail    ${date} is not a weekend.
+    ...    
+User is Able to Books T-Rex Rumble exTreme Thrill Pack on Saturday
+    ${saturday_date}=    Set Variable    2025-02-22    # Example Saturday date
+    Check Date Is Weekend    ${saturday_date}
+    Input Text    ${SAFARI_DATE}    ${saturday_date}
+    Select From List By Index    ${SAFARI_TYPE}    3
+    Wait Until Element Is Visible    ${SAFARI_SUBMIT}
+    Click Button    ${SAFARI_SUBMIT}
+    Handle Alert    accept
+    Sleep    2
+    Log    Booking 'T-Rex Rumble exTreme Thrill Pack' on Saturday.
+
+User is Able to Books T-Rex Rumble exTreme Thrill Pack on Sunday
+    ${sunday_date}=    Set Variable    2025-02-23    # Example Sunday date
+    Check Date Is Weekend    ${sunday_date}
+    Input Text    ${SAFARI_DATE}    ${sunday_date}
+    Select From List By Index    ${SAFARI_TYPE}    3
+    Wait Until Element Is Visible    ${SAFARI_SUBMIT}
+    Click Button    ${SAFARI_SUBMIT}
+    Handle Alert    accept
+    Sleep    2
+    Log    Booking 'T-Rex Rumble exTreme Thrill Pack' on Sunday.
+
+User Checks Out With VIP Tickets And Safaris Booked On The Weekend
+    Wait Until Element Is Visible    ${CART_NAV}
+    Click Element    ${CART_NAV}
+    Wait Until Element Is Visible    ${CART_DETAILS}
+    Element Should Contain    ${CART_DETAILS}    2 VIP Adult Ticket(s) - $200
+    Element Should Contain    ${CART_DETAILS}    2 VIP Child Ticket(s) - $120
+    Element Should Contain    ${CART_DETAILS}    T-Rex Rumble eXtreme Thrill Pack on 202502-02-02 - $220
+    Element Should Contain    ${CART_DETAILS}    T-Rex Rumble eXtreme Thrill Pack on 202502-02-03 - $220
+    Click Button    ${CHECKOUT_BUTTON}
+    Handle Alert    accept
+    Close Browser
+
+
+
+    
