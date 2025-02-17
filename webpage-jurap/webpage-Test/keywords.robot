@@ -2,9 +2,7 @@
 Documentation    Keywords for Jurastina-Kalle park
 Library    SeleniumLibrary
 Variables   variables.py
-Resource   variables.robot
 Library    DateTime
-
 
 *** Keywords ***
 Browser Is Opened To The Webpage
@@ -156,8 +154,8 @@ User Checks Out With One Safari Booked
     Wait Until Element Is Visible    ${CART_NAV}
     Click Element    ${CART_NAV}
     Wait Until Element Is Visible    ${CART_DETAILS}
-    Element Should Contain    ${CART_DETAILS}    1 Regular Adult Ticket(s) - $50
-    Element Should Contain    ${CART_DETAILS}    Herbivore Tour on 200025-03-19 - $120
+    Element Should Contain    ${CART_DETAILS}    ${TICKET}
+    Element Should Contain    ${CART_DETAILS}    ${HERBIVORE_SAFARI}
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept
     Close Browser
@@ -178,9 +176,9 @@ User Checks Out With Two Safaris Booked
     Wait Until Element Is Visible    ${CART_NAV}
     Click Element    ${CART_NAV}
     Wait Until Element Is Visible    ${CART_DETAILS}
-    Element Should Contain    ${CART_DETAILS}    1 Regular Adult Ticket(s) - $50
-    Element Should Contain    ${CART_DETAILS}    Herbivore Tour on 200025-03-19 - $120
-    Element Should Contain    ${CART_DETAILS}    T-Rex Rumble on 200025-03-19 - $150
+    Element Should Contain    ${CART_DETAILS}    ${TICKET}
+    Element Should Contain    ${CART_DETAILS}    ${HERBIVORE_SAFARI}
+    Element Should Contain    ${CART_DETAILS}    ${TREX_SAFARI}
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept
     Close Browser
@@ -217,10 +215,10 @@ User Checks Out With VIP Tickets And Safaris Booked On The Weekend
     Wait Until Element Is Visible    ${CART_NAV}
     Click Element    ${CART_NAV}
     Wait Until Element Is Visible    ${CART_DETAILS}
-    Element Should Contain    ${CART_DETAILS}    2 VIP Adult Ticket(s) - $200
-    Element Should Contain    ${CART_DETAILS}    2 VIP Child Ticket(s) - $120
-    Element Should Contain    ${CART_DETAILS}    T-Rex Rumble eXtreme Thrill Pack on 202502-02-02 - $220
-    Element Should Contain    ${CART_DETAILS}    T-Rex Rumble eXtreme Thrill Pack on 202502-02-03 - $220
+    Element Should Contain    ${CART_DETAILS}    ${VIP_ADULT}
+    Element Should Contain    ${CART_DETAILS}    ${VIP_CHILD}
+    Element Should Contain    ${CART_DETAILS}    ${TREX_EXTREME}
+    Element Should Contain    ${CART_DETAILS}    ${TREX_EXTREME}
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept
     Close Browser

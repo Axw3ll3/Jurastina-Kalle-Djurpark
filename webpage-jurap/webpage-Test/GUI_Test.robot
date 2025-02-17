@@ -38,25 +38,24 @@ Scenario: Valid Login:
 
 Scenario: Invalid Login
     [Documentation]     Test of invalid login with invalid credentials
-    [Tags]  test    invalid    login   Axel
+    [Tags]     test    user    invalid     Axel
     Given Browser Is Opened To The Webpage
     When User Arrived At The Login Page
     And Filled In Incorrect Credentials
     Then An Error Saying Invalid Username Or Password Should Appear
     And Terminate Browser Session
 
-# Yacine
 Buy One Adult Ticket
     [Documentation]    Testing if a user can buy 1 Adult ticket   
+    [Tags]    test    user    Buy    ticket    Yacine
     Given User has Registered 
     And User Has Logged In
     When User Navigates to Ticket Page 
     Then User is Able to Purchase Adult Ticket 
     And User Checks Out
-
-# Yacine
 Book a Tour for a Weekday
     [Documentation]    Testing if a user can book a Safari on a Weekday
+    [Tags]    test    user    book    Safari    Yacine
     Given User has Registered
     And User Has Logged In
     When User Navigates to Ticket Page
@@ -65,9 +64,9 @@ Book a Tour for a Weekday
     And User is Able to Book Herbivore Tour on a Weekday
     Then User Checks Out With One Safari Booked
 
-# Yacine
 Book Both Herbivore Tour and T-Rex Rumble on a Weekday
     [Documentation]    Testing wether a user can book both safari options
+    [Tags]    test    user    book    Multiple    Safari    Yacine
     Given User has Registered
     And User Has Logged In
     When User Navigates to Ticket Page
