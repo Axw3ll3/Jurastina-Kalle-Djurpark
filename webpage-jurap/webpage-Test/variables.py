@@ -33,6 +33,9 @@ TICKET_QUANTITY = "id:ticket-quantity"
 ADD_TO_CART = "xpath://form[@id='ticket-form']//button[@type='submit']"
 TICKET_MESSAGE = "id:ticket-message"    # Added for popup message handling
 
+# Logout Locator
+LOGOUT_BUTTON = "id:logout-link"
+
 # Cart Locators
 CART_DETAILS = "id:cart-details"
 CART_TOTAL = "id:cart-total"
@@ -46,3 +49,15 @@ INVALID_USERNAME = "wrong_user"
 INVALID_PASSWORD = "wrong_password"
 ERROR_MESSAGE = "id:login-message"
 
+SAFARI_NAV = "id:safari-nav"
+SAFARI_DATE = "id:safari-date"
+SAFARI_TYPE = "id:safari-type"
+SAFARI_SUBMIT = "xpath://form[@id='safari-form']//button[@type='submit']"
+VALID_DATE = "2000250319"
+HERBIVORE_SAFARI = "Herbivore Tour"
+TREX_SAFARI = "T-Rex Rumble"
+TREX_EXTREME = "T-Rex Rumble eXtreme Thrill Pack"
+TICKET = "Regular Adult Ticket"
+CHILD_TICKET = "Regular Child Ticket"
+VIP_ADULT = "VIP Adult Ticket"
+VIP_CHILD = "VIP Child Ticket"

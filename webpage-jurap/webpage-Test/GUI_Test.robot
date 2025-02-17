@@ -17,13 +17,23 @@ Scenario: Register Account:
     And Terminate Browser Session
 
 Scenario: Buy 2 Adult and 2 Childen VIP Tickets
-    [Documentation]     Test of buying tickets and safari
-    [Tags]  test    user    buying    tickets   safari  Axel
+    [Documentation]     Test of buying 2 adult and 2 children VIP tickets
+    [Tags]  test    user    buying    tickets   Axel
     Given User Has Registered
     And User Has Logged In
     When User Navigates To Ticket Page
     And User Is Able To Purchase 2 Adult VIP Ticket And 2 Child VIP Tickets
     Then User Go To The Cart And Confirm Purchase
+    And Terminate Browser Session
+
+Scenario: Valid Login:
+    [Documentation]     Test of valid login with valid login
+    [Tags]  test    valid   login   Axel
+    Given User Has Registered
+    And User Clicks On The Login Page
+    When User Enters Valid Credentials To Login
+    And User Clicks On The Login Button
+    Then Login Should Be Successful
     And Terminate Browser Session
 
 Scenario: Invalid Login
