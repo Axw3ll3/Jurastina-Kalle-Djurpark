@@ -28,7 +28,6 @@ Scenario: Buy 2 Adult and 2 Childen VIP Tickets
 
 Scenario: Invalid Login
     [Documentation]     Test of invalid login with invalid credentials
-    [Tags]     test    user    invalid  login   Axel
     Given Browser Is Opened To The Webpage
     When User Arrived At The Login Page
     And Filled In Incorrect Credentials
