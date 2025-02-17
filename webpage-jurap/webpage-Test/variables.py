@@ -33,6 +33,9 @@ TICKET_QUANTITY = "id:ticket-quantity"
 ADD_TO_CART = "xpath://form[@id='ticket-form']//button[@type='submit']"
 TICKET_MESSAGE = "id:ticket-message"    # Added for popup message handling
 
+# Logout Locator
+LOGOUT_BUTTON = "id:logout-link"
+
 # Cart Locators
 CART_DETAILS = "id:cart-details"
 CART_TOTAL = "id:cart-total"

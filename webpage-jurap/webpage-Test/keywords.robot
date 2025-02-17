@@ -20,9 +20,22 @@ User Enters Valid Credentials
     Input Text    ${REG_USERNAME}    ${USERNAME}
     Input Text    ${REG_PASSWORD}    ${PASSWORD}
 
+User Clicks On The Login Page
+    Wait Until Element Is Visible    ${LOGIN_NAV}
+    Click Element    ${LOGIN_NAV}
+
 User Clicks On The Register Button
     Click Button    ${REG_SUBMIT}
     Wait Until Element Is Visible    ${REG_MESSAGE}
+
+User Clicks On The Login Button
+    Wait Until Element Is Visible    ${LOGIN_NAV}
+    Click Element   ${LOGIN_SUBMIT}
+
+User Enters Valid Credentials To Login
+    Wait Until Element Is Visible    ${LOGIN_USERNAME}
+    Input Text    ${LOGIN_USERNAME}    ${USERNAME}
+    Input Text    ${LOGIN_PASSWORD}    ${PASSWORD}
 
 Register Should Be Successful
     Element Should Contain    ${REG_MESSAGE}    ${EXPECTED_SUCCESS_MESSAGE}
@@ -34,6 +47,10 @@ User Has Registered
     User Clicks On The Register Button
     Register Should Be Successful
     Sleep    2s    # Wait for registration to complete
+
+Login Should Be Successful
+    Wait Until Element Is Visible   ${LOGOUT_BUTTON}
+    Sleep    2s    # Wait for login to complete
 
 User Has Logged In
     Wait Until Element Is Visible    ${LOGIN_NAV}
