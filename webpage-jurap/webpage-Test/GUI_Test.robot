@@ -1,9 +1,10 @@
+#Group 7, Axel, Trang and Yacine
+
 *** Settings ***
 Documentation     Automatic tests for Jurastina Kalle Park website
 Library           SeleniumLibrary
 Resource          keywords.robot
 Variables         variables.py
-
 
 *** Test Cases ***
 Scenario: Register Account:
