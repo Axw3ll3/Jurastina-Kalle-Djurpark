@@ -1,3 +1,4 @@
+#Group 7, Axel, Trang and Yacine
 import os
 
 # Directory
