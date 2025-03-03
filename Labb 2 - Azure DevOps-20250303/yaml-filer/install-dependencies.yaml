@@ -1,4 +1,0 @@
-steps:
-  - script: |
-      pip install --upgrade robotframework-seleniumlibrary
-    displayName: 'Install Robot Framework and dependencies'
