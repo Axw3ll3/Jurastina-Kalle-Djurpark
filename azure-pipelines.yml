@@ -1,20 +1,20 @@
 trigger:
-  - feature/*
+  - main
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-
   - template: templates/install-dependencies.yaml
 
+  # Run all tests
   - script: |
-      robot --include new-feature --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/
-    displayName: 'Run Tests tagged with new-feature'
+      robot --output results/logs/output_all_test.xml --log results/logs/log_all_test.html --report results/logs/report_all_test.html tests/
+    displayName: 'Run All Tests'
 
   # Publish the Robot Framework reports as pipeline artifacts.
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: '$(System.DefaultWorkingDirectory)/results/logs/'
-      artifactName: 'robot-reports-feature'
+      artifactName: 'robot-reports-main'
     displayName: 'Publish Robot Framework Reports'
