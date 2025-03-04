@@ -4,19 +4,17 @@ Library           SeleniumLibrary
 Resource          keywords.robot
 Variables         variables.py
 
-Test Setup  Browser Is Opened To The Webpage    ${URL}  ${BROWSER}
+Test Setup  Browser Is Opened To The Webpage
 Test Teardown   Terminate Browser Session
 
 *** Test Cases ***
 Scenario: Register Account:
     [Documentation]     Test of registration of a user
     [Tags]  test    user    registration    Axel
-    Given Browser Is Opened To The Webpage
-    And User Clicks On The Register Page
+    Given User Clicks On The Register Page
     When User Enters Valid Credentials
     And User Clicks On The Register Button
     Then Register Should Be Successful
-    And Terminate Browser Session
 
 Scenario: Buy 2 Adult and 2 Childen VIP Tickets
     [Documentation]     Test of buying 2 adult and 2 children VIP tickets
