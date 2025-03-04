@@ -45,7 +45,7 @@ User Enters A Username That Is Too Short
 User Enter Valid Password
     Input Text    ${REG_PASSWORD}    ${PASSWORD}
 
-The browser should Show A required Field Message
+The Browser Should Show A Required Field Message
     ${Message}=    Get Element Attribute    ${REG_USERNAME}    validationMessage
     Should Be Equal    ${Message}    Please fill out this field.
     Log    Browser displayed required field validation message message.
@@ -133,24 +133,24 @@ User Go To The Cart And Confirm Purchase
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept    timeout=5s    # Handle any confirmation alert
 
-When User Arrived At The Login Page
+User Arrived At The Login Page
     Click Element    ${LOGIN_NAV}
     Wait Until Element Is Visible    ${LOGIN_NAV}
     Element Should Be Visible    ${LOGIN_USERNAME}
     Element Should Be Visible    ${LOGIN_PASSWORD}
 
-And Filled In Incorrect Credentials
+Filled In Incorrect Credentials
     Input Text    ${LOGIN_USERNAME}    ${INVALID_USERNAME}
     Input Text    ${LOGIN_PASSWORD}    ${INVALID_PASSWORD}
     Click Button    ${LOGIN_SUBMIT}
 
 
-Then An Error Saying Invalid Username Or Password Should Appear
+An Error Saying Invalid Username Or Password Should Appear
     Wait Until Element Contains    ${ERROR_MESSAGE}    Invalid username or password.    timeout=10s
     Element Text Should Be    ${ERROR_MESSAGE}    Invalid username or password.
 
 Terminate Browser Session
-    Close All Browsers
+    Close Browser
 
 # Yacine
 User is Able to Purchase Adult Ticket 
