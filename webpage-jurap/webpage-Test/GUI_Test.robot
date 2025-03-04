@@ -5,23 +5,22 @@ Resource          keywords.robot
 Variables         variables.py
 
 
-Test Setup  Browser Is Opened To The Webpage
-Test Teardown   Terminate Browser Session
-
 *** Test Cases ***
 Scenario: Register Account:
     [Documentation]     Test of registration of a user
     [Tags]  test    user    registration    Axel
-    Given User Clicks On The Register Page
+    Given Browser Is Opened To The Webpage
+    And User Clicks On The Register Page
     When User Enters Valid Credentials
     And User Clicks On The Register Button
     Then Register Should Be Successful
-
+    And Terminate Browser Session
 
 Scenario: Buy 2 Adult and 2 Childen VIP Tickets
     [Documentation]     Test of buying 2 adult and 2 children VIP tickets
     [Tags]  test    user    buying    tickets   Axel
-    Given User Has Registered And Logged In
+    Given User Has Registered
+    And User Has Logged In
     When User Navigates To Ticket Page
     And User Is Able To Purchase 2 Adult VIP Ticket And 2 Child VIP Tickets
     Then User Go To The Cart And Confirm Purchase
@@ -30,7 +29,7 @@ Scenario: Buy 2 Adult and 2 Childen VIP Tickets
 Scenario: Valid Login And Logout
     [Documentation]     Test of valid login with valid login
     [Tags]  test    valid   login   Axel
-    Given User Has Registered And Logged In
+    Given User Has Registered
     And User Clicks On The Login Page
     When User Enters Valid Credentials To Login
     And User Clicks On The Login Button
@@ -73,7 +72,8 @@ Scenario: Invalid Registation With Too Short Password
 Buy One Adult Ticket
     [Documentation]    Testing if a user can buy 1 Adult ticket   
     [Tags]    test    user    Buy    ticket    Yacine
-    Given User has Registered And Logged In
+    Given User has Registered 
+    And User Has Logged In
     When User Navigates to Ticket Page 
     Then User is Able to Purchase Adult Ticket 
     And User Checks Out
@@ -81,7 +81,8 @@ Buy One Adult Ticket
 Book a Tour for a Weekday
     [Documentation]    Testing if a user can book a Safari on a Weekday
     [Tags]    test    user    book    Safari    Yacine
-    Given User has Registered And Logged In
+    Given User has Registered
+    And User Has Logged In
     When User Navigates to Ticket Page
     And User is Able to Purchase Adult Ticket
     Then User Navigates to Booking Page
@@ -91,7 +92,8 @@ Book a Tour for a Weekday
 Book Both Herbivore Tour and T-Rex Rumble on a Weekday
     [Documentation]    Testing wether a user can book both safari options
     [Tags]    test    user    book    Multiple    Safari    Yacine
-    Given User has Registered And Logged In
+    Given User has Registered
+    And User Has Logged In
     When User Navigates to Ticket Page
     And User is Able to Purchase Adult Ticket
     Then User Navigates to Booking Page
@@ -102,7 +104,8 @@ Book Both Herbivore Tour and T-Rex Rumble on a Weekday
 Scenario: Successfully booking T-Rex Rumble exTreme Thrill Pack on a weekend
     [Documentation]    Test of booking safari for VIP on Saturday and Sunday
     [Tags]    test    user    booking    safari    Trang
-    Given User Has Registered And Logged In
+    Given User Has Registered
+    And User Has Logged In
     When User Navigates to Ticket Page
     And User Is Able To Purchase 2 Adult VIP Ticket And 2 Child VIP Tickets
     Then User Navigates to Booking Page
