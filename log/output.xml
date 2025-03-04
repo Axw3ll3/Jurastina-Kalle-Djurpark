@@ -1,170 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-17T10:09:58.572359" rpa="false" schemaversion="5">
-<suite id="s1" name="GUI Test" source="C:\Users\AYEHS\OneDrive - IT-Högskolan Sverige AB\Jurastina-Alfa\webpage-jurap\webpage-Test\GUI_Test.robot">
-<test id="s1-t1" name="Scenario: Valid Login:" line="29">
-<kw name="Given User Has Registered" owner="keywords">
-<kw name="Browser Is Opened To The Webpage" owner="keywords">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-03-04T18:05:40.752920" rpa="false" schemaversion="5">
+<suite id="s1" name="GUI Test" source="C:\Users\AxelsDator\OneDrive - IT-Högskolan Sverige AB\Jurastina-Alfa\webpage-jurap\webpage-Test\GUI_Test.robot">
+<test id="s1-t1" name="Scenario: Register Account:" line="12">
+<kw name="Browser Is Opened To The Webpage" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:09:59.158490" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/AYEHS/OneDrive - IT-Högskolan Sverige AB/Jurastina-Alfa/webpage-jurap/jurap.html'.</msg>
+<msg time="2025-03-04T18:05:40.991573" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/AxelsDator/OneDrive - IT-Högskolan Sverige AB/Jurastina-Alfa/webpage-jurap/jurap.html'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T10:09:59.158148" elapsed="2.580734"/>
+<status status="PASS" start="2025-03-04T18:05:40.991354" elapsed="1.448977"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T10:10:01.739292" elapsed="0.039764"/>
+<status status="PASS" start="2025-03-04T18:05:42.440647" elapsed="0.028929"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${REGISTER_NAV}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:01.779396" elapsed="0.131301"/>
+<status status="PASS" start="2025-03-04T18:05:42.469899" elapsed="0.014755"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:09:59.157429" elapsed="2.753440"/>
+<status status="PASS" start="2025-03-04T18:05:40.990894" elapsed="1.493956"/>
 </kw>
-<kw name="User Clicks On The Register Page" owner="keywords">
+<kw name="Given User Clicks On The Register Page" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:01.911656" level="INFO">Clicking element 'id:register-nav'.</msg>
+<msg time="2025-03-04T18:05:42.485688" level="INFO">Clicking element 'id:register-nav'.</msg>
 <arg>${REGISTER_NAV}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:01.911355" elapsed="0.082036"/>
+<status status="PASS" start="2025-03-04T18:05:42.485465" elapsed="0.073608"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${REG_USERNAME}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:01.993630" elapsed="0.022078"/>
+<status status="PASS" start="2025-03-04T18:05:42.559335" elapsed="0.013118"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:01.911057" elapsed="0.104820"/>
+<status status="PASS" start="2025-03-04T18:05:42.485075" elapsed="0.087513"/>
 </kw>
-<kw name="User Enters Valid Credentials" owner="keywords">
+<kw name="When User Enters Valid Credentials" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:02.016919" level="INFO">Typing text 'BookingBot' into text field 'id:reg-username'.</msg>
+<msg time="2025-03-04T18:05:42.573312" level="INFO">Typing text 'BookingBot' into text field 'id:reg-username'.</msg>
 <arg>${REG_USERNAME}</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:02.016504" elapsed="0.156936"/>
+<status status="PASS" start="2025-03-04T18:05:42.572982" elapsed="0.057767"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:02.174014" level="INFO">Typing text 'Finneland12' into text field 'id:reg-password'.</msg>
+<msg time="2025-03-04T18:05:42.631194" level="INFO">Typing text 'Finneland12' into text field 'id:reg-password'.</msg>
 <arg>${REG_PASSWORD}</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:02.173672" elapsed="0.126506"/>
+<status status="PASS" start="2025-03-04T18:05:42.630942" elapsed="0.053137"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:02.016055" elapsed="0.284281"/>
+<status status="PASS" start="2025-03-04T18:05:42.572740" elapsed="0.111719"/>
 </kw>
-<kw name="User Clicks On The Register Button" owner="keywords">
+<kw name="And User Clicks On The Register Button" owner="keywords">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:02.301085" level="INFO">Clicking button 'xpath://button[@type='submit']'.</msg>
+<msg time="2025-03-04T18:05:42.685343" level="INFO">Clicking button 'xpath://button[@type='submit']'.</msg>
 <arg>${REG_SUBMIT}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:02.300801" elapsed="0.177294"/>
+<status status="PASS" start="2025-03-04T18:05:42.685083" elapsed="0.069099"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${REG_MESSAGE}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:02.478370" elapsed="0.023791"/>
+<status status="PASS" start="2025-03-04T18:05:42.754589" elapsed="0.011057"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:02.300514" elapsed="0.201871"/>
+<status status="PASS" start="2025-03-04T18:05:42.684765" elapsed="0.081012"/>
 </kw>
-<kw name="Register Should Be Successful" owner="keywords">
+<kw name="Then Register Should Be Successful" owner="keywords">
 <kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:02.528699" level="INFO">Element 'id:register-message' contains text 'Registration successful'.</msg>
+<msg time="2025-03-04T18:05:42.792630" level="INFO">Element 'id:register-message' contains text 'Registration successful'.</msg>
 <arg>${REG_MESSAGE}</arg>
 <arg>${EXPECTED_SUCCESS_MESSAGE}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2025-02-17T10:10:02.503141" elapsed="0.025729"/>
+<status status="PASS" start="2025-03-04T18:05:42.766182" elapsed="0.026641"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:02.502597" elapsed="0.026393"/>
+<status status="PASS" start="2025-03-04T18:05:42.765950" elapsed="0.026983"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T10:10:04.529775" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T10:10:02.529135" elapsed="2.000919"/>
-</kw>
-<status status="PASS" start="2025-02-17T10:09:59.156674" elapsed="5.373615"/>
-</kw>
-<kw name="And User Clicks On The Login Page" owner="keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${LOGIN_NAV}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:04.531978" elapsed="0.050867"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:04.583606" level="INFO">Clicking element 'id:login-nav'.</msg>
-<arg>${LOGIN_NAV}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:04.583191" elapsed="0.099910"/>
-</kw>
-<status status="PASS" start="2025-02-17T10:10:04.530685" elapsed="0.152733"/>
-</kw>
-<kw name="When User Enters Valid Credentials To Login" owner="keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${LOGIN_USERNAME}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:04.684622" elapsed="0.112874"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:04.798301" level="INFO">Typing text 'BookingBot' into text field 'id:login-username'.</msg>
-<arg>${LOGIN_USERNAME}</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:04.797816" elapsed="0.236537"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:05.035262" level="INFO">Typing text 'Finneland12' into text field 'id:login-password'.</msg>
-<arg>${LOGIN_PASSWORD}</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:05.034701" elapsed="0.236713"/>
-</kw>
-<status status="PASS" start="2025-02-17T10:10:04.683916" elapsed="0.587796"/>
-</kw>
-<kw name="And User Clicks On The Login Button" owner="keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${LOGIN_NAV}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:05.272520" elapsed="0.061298"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:05.334617" level="INFO">Clicking element 'xpath://form[@id='login-form']//button[@type='submit']'.</msg>
-<arg>${LOGIN_SUBMIT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:05.334165" elapsed="0.129415"/>
-</kw>
-<status status="PASS" start="2025-02-17T10:10:05.272019" elapsed="0.191825"/>
-</kw>
-<kw name="Then Login Should Be Successful" owner="keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${LOGOUT_BUTTON}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:05.464790" elapsed="2.104845"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T10:10:09.571636" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T10:10:07.570575" elapsed="2.001324"/>
-</kw>
-<status status="PASS" start="2025-02-17T10:10:05.464200" elapsed="4.107894"/>
-</kw>
-<kw name="And Terminate Browser Session" owner="keywords">
+<kw name="Terminate Browser Session" owner="keywords" type="TEARDOWN">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T10:10:09.572883" elapsed="2.186574"/>
+<status status="PASS" start="2025-03-04T18:05:42.793470" elapsed="2.147981"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:09.572388" elapsed="2.187404"/>
+<status status="PASS" start="2025-03-04T18:05:42.793174" elapsed="2.148473"/>
 </kw>
-<doc>Test of valid login with valid login</doc>
+<doc>Test of registration of a user</doc>
 <tag>Axel</tag>
-<tag>login</tag>
+<tag>registration</tag>
 <tag>test</tag>
-<tag>valid</tag>
-<status status="PASS" start="2025-02-17T10:09:59.155728" elapsed="12.604249"/>
+<tag>user</tag>
+<status status="PASS" start="2025-03-04T18:05:40.990336" elapsed="3.951410"/>
 </test>
 <doc>Automatic tests for Jurastina Kalle Park website</doc>
-<status status="PASS" start="2025-02-17T10:09:58.612796" elapsed="13.147826"/>
+<status status="PASS" start="2025-03-04T18:05:40.765596" elapsed="4.176645"/>
 </suite>
 <statistics>
 <total>
@@ -172,9 +99,9 @@
 </total>
 <tag>
 <stat pass="1" fail="0" skip="0">Axel</stat>
-<stat pass="1" fail="0" skip="0">login</stat>
+<stat pass="1" fail="0" skip="0">registration</stat>
 <stat pass="1" fail="0" skip="0">test</stat>
-<stat pass="1" fail="0" skip="0">valid</stat>
+<stat pass="1" fail="0" skip="0">user</stat>
 </tag>
 <suite>
 <stat name="GUI Test" id="s1" pass="1" fail="0" skip="0">GUI Test</stat>

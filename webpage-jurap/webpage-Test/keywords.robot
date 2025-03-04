@@ -57,13 +57,20 @@ Registration Should Fail With Error Message
     Wait Until Page Contains    Password must be at least 8 characters long.    timeout=5s
     Log    Registration failed due to too short username and password
 
-User Has Registered
-    Browser Is Opened To The Webpage
+User Has Registered And Logged In
     User Clicks On The Register Page
     User Enters Valid Credentials
     User Clicks On The Register Button
     Register Should Be Successful
     Sleep    2s    # Wait for registration to complete
+    Wait Until Element Is Visible    ${LOGIN_NAV}
+    Click Element    ${LOGIN_NAV}
+    Wait Until Element Is Visible    ${LOGIN_USERNAME}
+    Input Text    ${LOGIN_USERNAME}    ${USERNAME}
+    Input Text    ${LOGIN_PASSWORD}    ${PASSWORD}
+    Click Button    ${LOGIN_SUBMIT}
+    Wait Until Element Is Visible    ${TICKETS_NAV}
+    Sleep    2s    # Wait for login to complete
 
 Login Should Be Successful
     Wait Until Element Is Visible   ${LOGOUT_BUTTON}
@@ -76,15 +83,6 @@ Logout Should Be Successful
     Handle Alert    accept
     Log    Logout was successful.
 
-User Has Logged In
-    Wait Until Element Is Visible    ${LOGIN_NAV}
-    Click Element    ${LOGIN_NAV}
-    Wait Until Element Is Visible    ${LOGIN_USERNAME}
-    Input Text    ${LOGIN_USERNAME}    ${USERNAME}
-    Input Text    ${LOGIN_PASSWORD}    ${PASSWORD}
-    Click Button    ${LOGIN_SUBMIT}
-    Wait Until Element Is Visible    ${TICKETS_NAV}
-    Sleep    2s    # Wait for login to complete
 
 User Navigates To Ticket Page
     Wait Until Element Is Visible    ${TICKETS_NAV}
@@ -149,7 +147,6 @@ And Filled In Incorrect Credentials
 Then An Error Saying Invalid Username Or Password Should Appear
     Wait Until Element Contains    ${ERROR_MESSAGE}    Invalid username or password.    timeout=10s
     Element Text Should Be    ${ERROR_MESSAGE}    Invalid username or password.
-    [Teardown]    Close Browser
 
 Terminate Browser Session
     Close All Browsers
@@ -168,7 +165,7 @@ User Checks Out
     Element Should Contain    ${CART_DETAILS}    1 Regular Adult Ticket(s) - $50
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept
-    Close Browser
+
 
 # Yacine
 User Navigates to Booking Page
@@ -196,7 +193,7 @@ User Checks Out With One Safari Booked
     Element Should Contain    ${CART_DETAILS}    ${HERBIVORE_SAFARI}
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept
-    Close Browser
+
     
 # Yacine
 User is Able to Book T-Rex Rumble on a Weekday
@@ -220,7 +217,7 @@ User Checks Out With Two Safaris Booked
     Element Should Contain    ${CART_DETAILS}    ${TREX_SAFARI}
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept
-    Close Browser
+
 
 User is Able to Books T-Rex Rumble exTreme Thrill Pack on Saturday
     ${saturday_date}=    Set Variable    2025-02-22    # Example Saturday date
@@ -254,7 +251,6 @@ User Checks Out With VIP Tickets And Safaris Booked On The Weekend
     Element Should Contain    ${CART_DETAILS}    ${TREX_EXTREME}
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept
-    Close Browser
 
 
 
