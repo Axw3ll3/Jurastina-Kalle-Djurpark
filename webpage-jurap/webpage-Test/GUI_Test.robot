@@ -10,7 +10,7 @@ Test Teardown   Close All Browsers
 *** Test Cases ***
 Scenario: Register Account:
     [Documentation]     Test of registration of a user
-    [Tags]  test    user    registration    Axel
+    [Tags]  test    user    registration    Axel    Axel_Refactor
     Given User Clicks On The Register Page
     When User Enters Valid Credentials
     And User Clicks On The Register Button
@@ -18,24 +18,28 @@ Scenario: Register Account:
 
 Scenario: Buy 2 Adult and 2 Childen VIP Tickets
     [Documentation]     Test of buying 2 adult and 2 children VIP tickets
-    [Tags]  test    user    buying    tickets   Axel
+    [Tags]  test    user    buying    tickets   Axel    Axel_Refactor
     Given User Has Registered And Logged In
     When User Navigates To Ticket Page
     And User Is Able To Purchase 2 Adult VIP Ticket And 2 Child VIP Tickets
     Then User Go To The Cart And Confirm Purchase
 
 
-Scenario: Valid Login And Logout
+Scenario: Valid Login
     [Documentation]     Test of valid login with valid login
-    [Tags]  test    valid   login   Axel
-    Given User Has Registered And Logged In
+    [Tags]  test    valid   login   Axel    Axel_Refactor
+    Given User Has Registered
     And User Clicks On The Login Page
     When User Enters Valid Credentials To Login
     And User Clicks On The Login Button
     Then Login Should Be Successful
-    And User Clicks On The Logout Button
-    Then Logout Should Be Successful
 
+Scenario: Logout
+    [Documentation]    Test of logout function
+    [Tags]    test    logout    Axel
+    Given User Has Registered And Logged In
+    When User Clicks On The Logout Button
+    Then Logout Should Be Successful
 
 Scenario: Invalid Login
     [Documentation]     Test of invalid login with invalid credentials

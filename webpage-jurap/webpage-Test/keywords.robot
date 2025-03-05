@@ -59,12 +59,16 @@ Registration Should Fail With Error Message
     Wait Until Page Contains    Password must be at least 8 characters long.    timeout=5s
     Log    Registration failed due to too short username and password
 
-User Has Registered And Logged In
+User Has Registered
     User Clicks On The Register Page
     User Enters Valid Credentials
     User Clicks On The Register Button
     Register Should Be Successful
     Sleep    2s    # Wait for registration to complete
+
+
+User Has Registered And Logged In
+    User Has Registered
     Wait Until Element Is Visible    ${LOGIN_NAV}
     Click Element    ${LOGIN_NAV}
     Wait Until Element Is Visible    ${LOGIN_USERNAME}
