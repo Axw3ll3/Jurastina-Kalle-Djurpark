@@ -7,6 +7,7 @@ Library    DateTime
 
 *** Keywords ***
 Browser Is Opened To The Webpage
+    [Arguments]    ${URL}    ${BROWSER}
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Wait Until Element Is Visible    ${REGISTER_NAV}
@@ -28,13 +29,13 @@ User Clicks On The Register Button
     Wait Until Element Is Visible    ${REG_MESSAGE}
 
 User Clicks On The Login Button
-    Wait Until Element Is Visible    ${LOGIN_NAV}
     Click Element   ${LOGIN_SUBMIT}
 
 User Enters Valid Credentials To Login
     Wait Until Element Is Visible    ${LOGIN_USERNAME}
     Input Text    ${LOGIN_USERNAME}    ${USERNAME}
     Input Text    ${LOGIN_PASSWORD}    ${PASSWORD}
+
 
 Register Should Be Successful
     Element Should Contain    ${REG_MESSAGE}    ${EXPECTED_SUCCESS_MESSAGE}
@@ -75,7 +76,6 @@ User Has Registered And Logged In
 
 Login Should Be Successful
     Wait Until Element Is Visible   ${LOGOUT_BUTTON}
-    Sleep    2s    # Wait for login to complete
 
 User Clicks On The Logout Button
     Click Element    ${LOGOUT_BUTTON}
@@ -148,9 +148,6 @@ Filled In Incorrect Credentials
 An Error Saying Invalid Username Or Password Should Appear
     Wait Until Element Contains    ${ERROR_MESSAGE}    Invalid username or password.    timeout=10s
     Element Text Should Be    ${ERROR_MESSAGE}    Invalid username or password.
-
-Terminate Browser Session
-    Close Browser
 
 # Yacine
 User is Able to Purchase Adult Ticket 
