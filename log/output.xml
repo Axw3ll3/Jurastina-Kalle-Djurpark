@@ -1,183 +1,291 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-17T10:09:58.572359" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-03-05T09:47:11.379569" rpa="false" schemaversion="5">
 <suite id="s1" name="GUI Test" source="C:\Users\AYEHS\OneDrive - IT-Högskolan Sverige AB\Jurastina-Alfa\webpage-jurap\webpage-Test\GUI_Test.robot">
-<test id="s1-t1" name="Scenario: Valid Login:" line="29">
-<kw name="Given User Has Registered" owner="keywords">
-<kw name="Browser Is Opened To The Webpage" owner="keywords">
+<test id="s1-t1" name="Scenario: Valid Login And Logout" line="28">
+<kw name="Browser Is Opened To The Webpage" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:09:59.158490" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/AYEHS/OneDrive - IT-Högskolan Sverige AB/Jurastina-Alfa/webpage-jurap/jurap.html'.</msg>
+<msg time="2025-03-05T09:47:11.761596" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/AYEHS/OneDrive - IT-Högskolan Sverige AB/Jurastina-Alfa/webpage-jurap/jurap.html'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T10:09:59.158148" elapsed="2.580734"/>
+<status status="PASS" start="2025-03-05T09:47:11.761278" elapsed="1.615557"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T10:10:01.739292" elapsed="0.039764"/>
+<status status="PASS" start="2025-03-05T09:47:13.377294" elapsed="0.045260"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${REGISTER_NAV}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:01.779396" elapsed="0.131301"/>
+<status status="PASS" start="2025-03-05T09:47:13.422936" elapsed="0.042162"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:09:59.157429" elapsed="2.753440"/>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<status status="PASS" start="2025-03-05T09:47:11.760471" elapsed="1.704986"/>
 </kw>
+<kw name="Given User Has Registered And Logged In" owner="keywords">
 <kw name="User Clicks On The Register Page" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:01.911656" level="INFO">Clicking element 'id:register-nav'.</msg>
+<msg time="2025-03-05T09:47:13.467587" level="INFO">Clicking element 'id:register-nav'.</msg>
 <arg>${REGISTER_NAV}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:01.911355" elapsed="0.082036"/>
+<status status="PASS" start="2025-03-05T09:47:13.467165" elapsed="0.094513"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${REG_USERNAME}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:01.993630" elapsed="0.022078"/>
+<status status="PASS" start="2025-03-05T09:47:13.562073" elapsed="0.024322"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:01.911057" elapsed="0.104820"/>
+<status status="PASS" start="2025-03-05T09:47:13.466684" elapsed="0.119985"/>
 </kw>
 <kw name="User Enters Valid Credentials" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:02.016919" level="INFO">Typing text 'BookingBot' into text field 'id:reg-username'.</msg>
+<msg time="2025-03-05T09:47:13.588190" level="INFO">Typing text 'BookingBot' into text field 'id:reg-username'.</msg>
 <arg>${REG_USERNAME}</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:02.016504" elapsed="0.156936"/>
+<status status="PASS" start="2025-03-05T09:47:13.587678" elapsed="0.127427"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:02.174014" level="INFO">Typing text 'Finneland12' into text field 'id:reg-password'.</msg>
+<msg time="2025-03-05T09:47:13.716315" level="INFO">Typing text 'Finneland12' into text field 'id:reg-password'.</msg>
 <arg>${REG_PASSWORD}</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:02.173672" elapsed="0.126506"/>
+<status status="PASS" start="2025-03-05T09:47:13.715581" elapsed="0.114591"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:02.016055" elapsed="0.284281"/>
+<status status="PASS" start="2025-03-05T09:47:13.587085" elapsed="0.243390"/>
 </kw>
 <kw name="User Clicks On The Register Button" owner="keywords">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:02.301085" level="INFO">Clicking button 'xpath://button[@type='submit']'.</msg>
+<msg time="2025-03-05T09:47:13.831414" level="INFO">Clicking button 'xpath://button[@type='submit']'.</msg>
 <arg>${REG_SUBMIT}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:02.300801" elapsed="0.177294"/>
+<status status="PASS" start="2025-03-05T09:47:13.831116" elapsed="0.121572"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${REG_MESSAGE}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:02.478370" elapsed="0.023791"/>
+<status status="PASS" start="2025-03-05T09:47:13.952943" elapsed="0.020824"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:02.300514" elapsed="0.201871"/>
+<status status="PASS" start="2025-03-05T09:47:13.830764" elapsed="0.143234"/>
 </kw>
 <kw name="Register Should Be Successful" owner="keywords">
 <kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:02.528699" level="INFO">Element 'id:register-message' contains text 'Registration successful'.</msg>
+<msg time="2025-03-05T09:47:13.997089" level="INFO">Element 'id:register-message' contains text 'Registration successful'.</msg>
 <arg>${REG_MESSAGE}</arg>
 <arg>${EXPECTED_SUCCESS_MESSAGE}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2025-02-17T10:10:02.503141" elapsed="0.025729"/>
+<status status="PASS" start="2025-03-05T09:47:13.974701" elapsed="0.022761"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:02.502597" elapsed="0.026393"/>
+<status status="PASS" start="2025-03-05T09:47:13.974255" elapsed="0.023526"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T10:10:04.529775" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-03-05T09:47:15.998524" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T10:10:02.529135" elapsed="2.000919"/>
+<status status="PASS" start="2025-03-05T09:47:13.997944" elapsed="2.000763"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:09:59.156674" elapsed="5.373615"/>
-</kw>
-<kw name="And User Clicks On The Login Page" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGIN_NAV}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:04.531978" elapsed="0.050867"/>
+<status status="PASS" start="2025-03-05T09:47:15.998887" elapsed="0.021105"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:04.583606" level="INFO">Clicking element 'id:login-nav'.</msg>
+<msg time="2025-03-05T09:47:16.020451" level="INFO">Clicking element 'id:login-nav'.</msg>
 <arg>${LOGIN_NAV}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:04.583191" elapsed="0.099910"/>
+<status status="PASS" start="2025-03-05T09:47:16.020202" elapsed="0.066046"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:04.530685" elapsed="0.152733"/>
-</kw>
-<kw name="When User Enters Valid Credentials To Login" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGIN_USERNAME}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:04.684622" elapsed="0.112874"/>
+<status status="PASS" start="2025-03-05T09:47:16.086678" elapsed="0.021446"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:04.798301" level="INFO">Typing text 'BookingBot' into text field 'id:login-username'.</msg>
+<msg time="2025-03-05T09:47:16.108599" level="INFO">Typing text 'BookingBot' into text field 'id:login-username'.</msg>
 <arg>${LOGIN_USERNAME}</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:04.797816" elapsed="0.236537"/>
+<status status="PASS" start="2025-03-05T09:47:16.108333" elapsed="0.101733"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:05.035262" level="INFO">Typing text 'Finneland12' into text field 'id:login-password'.</msg>
+<msg time="2025-03-05T09:47:16.210659" level="INFO">Typing text 'Finneland12' into text field 'id:login-password'.</msg>
 <arg>${LOGIN_PASSWORD}</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:05.034701" elapsed="0.236713"/>
+<status status="PASS" start="2025-03-05T09:47:16.210344" elapsed="0.123554"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:04.683916" elapsed="0.587796"/>
-</kw>
-<kw name="And User Clicks On The Login Button" owner="keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${LOGIN_NAV}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:05.272520" elapsed="0.061298"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T10:10:05.334617" level="INFO">Clicking element 'xpath://form[@id='login-form']//button[@type='submit']'.</msg>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-05T09:47:16.334698" level="INFO">Clicking button 'xpath://form[@id='login-form']//button[@type='submit']'.</msg>
 <arg>${LOGIN_SUBMIT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T10:10:05.334165" elapsed="0.129415"/>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T09:47:16.334251" elapsed="0.151664"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:05.272019" elapsed="0.191825"/>
-</kw>
-<kw name="Then Login Should Be Successful" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${LOGOUT_BUTTON}</arg>
+<arg>${TICKETS_NAV}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-17T10:10:05.464790" elapsed="2.104845"/>
+<status status="PASS" start="2025-03-05T09:47:16.486242" elapsed="0.017854"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T10:10:09.571636" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-03-05T09:47:18.504836" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T10:10:07.570575" elapsed="2.001324"/>
+<status status="PASS" start="2025-03-05T09:47:16.504312" elapsed="2.000776"/>
 </kw>
-<status status="PASS" start="2025-02-17T10:10:05.464200" elapsed="4.107894"/>
+<status status="PASS" start="2025-03-05T09:47:13.466062" elapsed="5.039222"/>
 </kw>
-<kw name="And Terminate Browser Session" owner="keywords">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
+<kw name="And User Clicks On The Login Page" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-05T09:47:18.506089" level="INFO">Clicking element 'id:login-nav'.</msg>
+<msg time="2025-03-05T09:47:18.706184" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-50.png"&gt;&lt;img src="selenium-screenshot-50.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-05T09:47:18.706692" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.143)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78021C6A5+28789]
+	(No symbol) [0x00007FF780185B20]
+	(No symbol) [0x00007FF780018DCC]
+	(No symbol) [0x00007FF780070774]
+	(No symbol) [0x00007FF780062314]
+	(No symbol) [0x00007FF78009732A]
+	(No symbol) [0x00007FF780061BC6]
+	(No symbol) [0x00007FF780097540]
+	(No symbol) [0x00007FF7800BF7E3]
+	(No symbol) [0x00007FF780097103]
+	(No symbol) [0x00007FF78005FFC0]
+	(No symbol) [0x00007FF780061273]
+	GetHandleVerifier [0x00007FF780561AED+3458237]
+	GetHandleVerifier [0x00007FF78057829C+3550316]
+	GetHandleVerifier [0x00007FF78056DB9D+3507565]
+	GetHandleVerifier [0x00007FF7802E2C6A+841274]
+	(No symbol) [0x00007FF7801909EF]
+	(No symbol) [0x00007FF78018CB34]
+	(No symbol) [0x00007FF78018CCD6]
+	(No symbol) [0x00007FF78017C119]
+	BaseThreadInitThunk [0x00007FFFBC1FE8D7+23]
+	RtlUserThreadStart [0x00007FFFBD59BF2C+44]
+</msg>
+<arg>${LOGIN_NAV}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-05T09:47:18.505838" elapsed="0.256095">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.143)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78021C6A5+28789]
+	(No symbol) [0x00007FF780185B20]
+	(No symbol) [0x00007FF780018DCC]
+	(No symbol) [0x00007FF780070774]
+	(No symbol) [0x00007FF780062314]
+	(No symbol) [0x00007FF78009732A]
+	(No symbol) [0x00007FF780061BC6]
+	(No symbol) [0x00007FF780097540]
+	(No symbol) [0x00007FF7800BF7E3]
+	(No symbol) [0x00007FF780097103]
+	(No symbol) [0x00007FF78005FFC0]
+	(No symbol) [0x00007FF780061273]
+	GetHandleVerifier [0x00007FF780561AED+3458237]
+	GetHandleVerifier [0x00007FF78057829C+3550316]
+	GetHandleVerifier [0x00007FF78056DB9D+3507565]
+	GetHandleVerifier [0x00007FF7802E2C6A+841274]
+	(No symbol) [0x00007FF7801909EF]
+	(No symbol) [0x00007FF78018CB34]
+	(No symbol) [0x00007FF78018CCD6]
+	(No symbol) [0x00007FF78017C119]
+	BaseThreadInitThunk [0x00007FFFBC1FE8D7+23]
+	RtlUserThreadStart [0x00007FFFBD59BF2C+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-03-05T09:47:18.505523" elapsed="0.256791">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.143)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78021C6A5+28789]
+	(No symbol) [0x00007FF780185B20]
+	(No symbol) [0x00007FF780018DCC]
+	(No symbol) [0x00007FF780070774]
+	(No symbol) [0x00007FF780062314]
+	(No symbol) [0x00007FF78009732A]
+	(No symbol) [0x00007FF780061BC6]
+	(No symbol) [0x00007FF780097540]
+	(No symbol) [0x00007FF7800BF7E3]
+	(No symbol) [0x00007FF780097103]
+	(No symbol) [0x00007FF78005FFC0]
+	(No symbol) [0x00007FF780061273]
+	GetHandleVerifier [0x00007FF780561AED+3458237]
+	GetHandleVerifier [0x00007FF78057829C+3550316]
+	GetHandleVerifier [0x00007FF78056DB9D+3507565]
+	GetHandleVerifier [0x00007FF7802E2C6A+841274]
+	(No symbol) [0x00007FF7801909EF]
+	(No symbol) [0x00007FF78018CB34]
+	(No symbol) [0x00007FF78018CCD6]
+	(No symbol) [0x00007FF78017C119]
+	BaseThreadInitThunk [0x00007FFFBC1FE8D7+23]
+	RtlUserThreadStart [0x00007FFFBD59BF2C+44]
+</status>
+</kw>
+<kw name="When User Enters Valid Credentials To Login" owner="keywords">
+<status status="NOT RUN" start="2025-03-05T09:47:18.762540" elapsed="0.000093"/>
+</kw>
+<kw name="And User Clicks On The Login Button" owner="keywords">
+<status status="NOT RUN" start="2025-03-05T09:47:18.762778" elapsed="0.000079"/>
+</kw>
+<kw name="Then Login Should Be Successful" owner="keywords">
+<status status="NOT RUN" start="2025-03-05T09:47:18.762990" elapsed="0.000072"/>
+</kw>
+<kw name="And User Clicks On The Logout Button" owner="keywords">
+<status status="NOT RUN" start="2025-03-05T09:47:18.763191" elapsed="0.000082"/>
+</kw>
+<kw name="Then Logout Should Be Successful" owner="keywords">
+<status status="NOT RUN" start="2025-03-05T09:47:18.763419" elapsed="0.000078"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T10:10:09.572883" elapsed="2.186574"/>
-</kw>
-<status status="PASS" start="2025-02-17T10:10:09.572388" elapsed="2.187404"/>
+<status status="PASS" start="2025-03-05T09:47:18.763738" elapsed="2.153409"/>
 </kw>
 <doc>Test of valid login with valid login</doc>
 <tag>Axel</tag>
 <tag>login</tag>
 <tag>test</tag>
 <tag>valid</tag>
-<status status="PASS" start="2025-02-17T10:09:59.155728" elapsed="12.604249"/>
+<status status="FAIL" start="2025-03-05T09:47:11.759454" elapsed="9.157863">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.143)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78021C6A5+28789]
+	(No symbol) [0x00007FF780185B20]
+	(No symbol) [0x00007FF780018DCC]
+	(No symbol) [0x00007FF780070774]
+	(No symbol) [0x00007FF780062314]
+	(No symbol) [0x00007FF78009732A]
+	(No symbol) [0x00007FF780061BC6]
+	(No symbol) [0x00007FF780097540]
+	(No symbol) [0x00007FF7800BF7E3]
+	(No symbol) [0x00007FF780097103]
+	(No symbol) [0x00007FF78005FFC0]
+	(No symbol) [0x00007FF780061273]
+	GetHandleVerifier [0x00007FF780561AED+3458237]
+	GetHandleVerifier [0x00007FF78057829C+3550316]
+	GetHandleVerifier [0x00007FF78056DB9D+3507565]
+	GetHandleVerifier [0x00007FF7802E2C6A+841274]
+	(No symbol) [0x00007FF7801909EF]
+	(No symbol) [0x00007FF78018CB34]
+	(No symbol) [0x00007FF78018CCD6]
+	(No symbol) [0x00007FF78017C119]
+	BaseThreadInitThunk [0x00007FFFBC1FE8D7+23]
+	RtlUserThreadStart [0x00007FFFBD59BF2C+44]
+</status>
 </test>
 <doc>Automatic tests for Jurastina Kalle Park website</doc>
-<status status="PASS" start="2025-02-17T10:09:58.612796" elapsed="13.147826"/>
+<status status="FAIL" start="2025-03-05T09:47:11.399343" elapsed="9.518853"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Axel</stat>
-<stat pass="1" fail="0" skip="0">login</stat>
-<stat pass="1" fail="0" skip="0">test</stat>
-<stat pass="1" fail="0" skip="0">valid</stat>
+<stat pass="0" fail="1" skip="0">Axel</stat>
+<stat pass="0" fail="1" skip="0">login</stat>
+<stat pass="0" fail="1" skip="0">test</stat>
+<stat pass="0" fail="1" skip="0">valid</stat>
 </tag>
 <suite>
-<stat name="GUI Test" id="s1" pass="1" fail="0" skip="0">GUI Test</stat>
+<stat name="GUI Test" id="s1" pass="0" fail="1" skip="0">GUI Test</stat>
 </suite>
 </statistics>
 <errors>
