@@ -14,7 +14,8 @@ steps:
   - template: templates/install-dependencies.yaml
 
   - script: |
-      robot --include new-feature --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/
+      robot --include new-feature --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html webpage-jurap/webpage-Test/
+    displayName: 'Run Specific Tests'
   displayName: 'Run Tests tagged with new-feature'
 
   # Publish the Robot Framework reports as pipeline artifacts.
