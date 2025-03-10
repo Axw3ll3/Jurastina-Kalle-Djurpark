@@ -5,7 +5,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-
   - template: templates/install-dependencies.yaml
 
   - script: |
