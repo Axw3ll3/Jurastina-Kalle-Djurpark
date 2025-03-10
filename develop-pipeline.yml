@@ -18,7 +18,7 @@ steps:
     displayName: 'Run Test File "Kim"'
 
   - script: |
-      robot --test "Buying Safari Tickets For The Family" --output results/logs/output_kim_test_safari.xml --log results/logs/log_kim_test_safari.html --report results/logs/report_kim_test_safari.html tests/
+      robot --test "Buying Safari Tickets For The Family" --output results/logs/output_kim_test_safari.xml --log results/logs/log_kim_test_safari.html --report results/logs/report_kim_test_safari.html webpage-jurap/webpage-Test/
     displayName: 'Run Specific Tests'
 
   # Publish the Robot Framework reports as pipeline artifacts.
