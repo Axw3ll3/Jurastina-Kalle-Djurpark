@@ -36,7 +36,7 @@ Scenario: Valid Login
 
 Scenario: Logout
     [Documentation]    Test of logout function
-    [Tags]    test    logout    Axel
+    [Tags]    test    logout    Axel    new-feature
     Given User Has Registered And Logged In
     When User Clicks On The Logout Button
     Then Logout Should Be Successful
