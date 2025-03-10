@@ -1,13 +1,19 @@
 *** Settings ***
 Documentation     Automatic tests for Jurastina Kalle Park website
 Library           SeleniumLibrary
-Resource          keywords.robot
-Variables         variables.py
+Resource          ${EXECDIR}/resources/keywords.robot
+Variables         ${EXECDIR}/util/variables.py    
 
 Test Setup  Browser Is Opened To The Webpage    ${URL}  ${BROWSER}
 Test Teardown   Close All Browsers
 
+*** Variables ***
+${util_path}    ${EXECDIR}/util/variables.py
+${resources_path}    ${EXECDIR}/resources/keywords.robot
+
 *** Test Cases ***
+Kolla EXECDIR
+    Log To Console    ${EXECDIR}
 Scenario: Register Account:
     [Documentation]     Test of registration of a user
     [Tags]  test    user    registration    Axel    Axel_Refactor
