@@ -14,7 +14,7 @@ steps:
 
   # Scripts for running all tests in a file and to run tests based on test case name (integration testing)
   - script: |
-      robot --output results/logs/output_gui_test.xml --log results/logs/log_gui_test.html --report results/logs/report_gui_test.html webpage-jurap/webpage-Test/
+      robot --output results/logs/output_gui_test.xml --log results/logs/log_gui_test.html --report results/logs/report_gui_test.html tests/
     displayName: 'Run Test File "GUI"'
 
   # Publish the Robot Framework reports as pipeline artifacts.
