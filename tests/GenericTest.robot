@@ -41,21 +41,19 @@ Scenario: Invalid Login
 
 Scenario: Invalid Registation With Empty Username
     [Documentation]    Test of invalid registration with empty username field
-    [Tags]    test    user    invalid    registration    Trang
+    [Tags]    test    user    invalid    registration    Trang    Trang_Refactor
     Given User Clicks On The Register Page
     When User Enters A Username That Is Too Short
     And User Enter Valid Password
-    And User Clicks On The Register Button
     Then The browser should Show A required Field Message
 
 
 Scenario: Invalid Registation With Too Short Password  
     [Documentation]    Test of invalid registration with too short password
-    [Tags]    test     user     invalid    registation    Trang
+    [Tags]    test     user     invalid    registation    Trang    Trang_Refactor
     Given User Clicks On The Register Page
     When User Enters Valid Credentials
     And User Enters A Password That Is Too Short
-    And User Clicks On The Register Button
     Then Registration Should Fail With Error Message
 
 Buy One Adult Ticket

@@ -46,6 +46,7 @@ User Enter Valid Password
     Input Text    ${REG_PASSWORD}    ${PASSWORD}
 
 The Browser Should Show A Required Field Message
+    User Clicks On The Register Button
     ${Message}=    Get Element Attribute    ${REG_USERNAME}    validationMessage
     Should Be Equal    ${Message}    Please fill out this field.
     Log    Browser displayed required field validation message message.
@@ -55,6 +56,7 @@ User Enters A Password That Is Too Short
     Input Text    ${REG_PASSWORD}    ${short_password}
 
 Registration Should Fail With Error Message
+    User Clicks On The Register Button
     Wait Until Page Contains    Password must be at least 8 characters long.    timeout=5s
     Log    Registration failed due to too short username and password
 
