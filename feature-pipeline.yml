@@ -13,9 +13,10 @@ steps:
 
   - template: templates/install-dependencies.yaml
 
+
   - script: |
-      robot --include new-feature --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/
-  displayName: 'Run Tests tagged with new-feature'
+      robot --include new-feature --output results/logs/gui_test.xml --log results/logs/log_gui_test.html --report results/logs/report_gui_test.html webpage-jurap/webpage-Test
+    displayName: 'Run Tests tagged with new-feature'
 
   # Publish the Robot Framework reports as pipeline artifacts.
   - task: PublishPipelineArtifact@1
@@ -23,5 +24,3 @@ steps:
       targetPath: '$(System.DefaultWorkingDirectory)/results/logs/'
       artifactName: 'robot-reports-feature'
     displayName: 'Publish Robot Framework Reports'
-
-
