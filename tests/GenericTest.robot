@@ -12,8 +12,6 @@ ${util_path}    ${EXECDIR}/util/variables.py
 ${resources_path}    ${EXECDIR}/resources/keywords.robot
 
 *** Test Cases ***
-Kolla EXECDIR
-    Log To Console    ${EXECDIR}
 Scenario: Register Account:
     [Documentation]     Test of registration of a user
     [Tags]  test    user    registration    Axel    Axel_Refactor
