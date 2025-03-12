@@ -14,7 +14,7 @@ steps:
 
   # Run all tests
   - script: |
-      robot --output results/logs/output_gui_test.xml --log results/logs/log_gui_test.html --report results/logs/report_gui_test.html webpage-jurap/webpage-Test
+      robot --output results/logs/output_gui_test.xml --log results/logs/log_gui_test.html --report results/logs/report_gui_test.html tests/
     displayName: 'Run All Tests'
 
   # Publish the Robot Framework reports as pipeline artifacts.
