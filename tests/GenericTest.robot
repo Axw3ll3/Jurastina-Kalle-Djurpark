@@ -7,10 +7,6 @@ Variables         ${EXECDIR}/util/variables.py
 Test Setup  Browser Is Opened To The Webpage    ${URL}  ${BROWSER}
 Test Teardown   Close All Browsers
 
-*** Variables ***
-${util_path}    ${EXECDIR}/util/variables.py
-${resources_path}    ${EXECDIR}/resources/keywords.robot
-
 *** Test Cases ***
 Scenario: Register Account:
     [Documentation]     Test of registration of a user
