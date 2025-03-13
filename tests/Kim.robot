@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ${EXECDIR}/resources/keywords.robot
-Resource    ${EXECDIR}/resources/kim-keywords.robot
+Resource    ${EXECDIR}/resources/keywords_files/kim-keywords.robot
 
 Test Setup  Browser Is Opened To The Webpage    ${URL}  ${BROWSER}
 Test Teardown   Close All Browsers
