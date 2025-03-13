@@ -155,6 +155,9 @@ An Error Saying Invalid Username Or Password Should Appear
 
 # Yacine
 User is Able to Purchase Adult Ticket 
+    Wait Until Element Is Visible    ${TICKETS_NAV}
+    Click Element    ${TICKETS_NAV}
+    Wait Until Element Is Visible    ${TICKET_TYPE}
     Click Button    ${ADD_TO_CART}
     Handle Alert    accept
     Sleep    2
@@ -168,7 +171,6 @@ User Checks Out
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept
 
-
 # Yacine
 User Navigates to Booking Page
     Title Should be    Jura-Stina-Kalle Park
@@ -176,6 +178,8 @@ User Navigates to Booking Page
 
 # Yacine
 User is Able to Book Herbivore Tour on a Weekday
+    Title Should be    Jura-Stina-Kalle Park
+    Click Element    ${SAFARI_NAV}
     ${weekday_date}=    Set Variable    2025-02-27    # Example date
     Check Date Is Weekday    ${weekday_date}
     Input Text    ${SAFARI_DATE}    ${weekday_date}
@@ -198,7 +202,18 @@ User Checks Out With One Safari Booked
 
     
 # Yacine
-User is Able to Book T-Rex Rumble on a Weekday
+User is Able to Book T-Rex Rumble And Herbivore Tour on a Weekday
+    Title Should be    Jura-Stina-Kalle Park
+    Click Element    ${SAFARI_NAV}
+    ${weekday_date}=    Set Variable    2025-02-27    # Example date
+    Check Date Is Weekday    ${weekday_date}
+    Input Text    ${SAFARI_DATE}    ${weekday_date}
+    Click Element    ${SAFARI_TYPE}
+    Click Element    ${SAFARI_TYPE}
+    Wait Until Element Is Visible    ${SAFARI_SUBMIT}
+    Click Button    ${SAFARI_SUBMIT}
+    Handle Alert    accept
+    Sleep    2
     ${weekday_date}=    Set Variable    2025-02-27    # Example date
     Check Date Is Weekday    ${weekday_date}
     Input Text    ${SAFARI_DATE}    ${weekday_date}

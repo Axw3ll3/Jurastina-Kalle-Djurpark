@@ -70,31 +70,25 @@ Scenario: Invalid Registation With Too Short Password
 
 Buy One Adult Ticket
     [Documentation]    Testing if a user can buy 1 Adult ticket   
-    [Tags]    test    user    Buy    ticket    Yacine
+    [Tags]    test    user    Buy    ticket    Yacine_refactor
     Given User has Registered And Logged In
-    When User Navigates to Ticket Page 
-    Then User is Able to Purchase Adult Ticket 
-    And User Checks Out
+    When User is Able to Purchase Adult Ticket 
+    Then User Checks Out
 
 Book a Tour for a Weekday
     [Documentation]    Testing if a user can book a Safari on a Weekday
-    [Tags]    test    user    book    Safari    Yacine
+    [Tags]    test    user    book    Safari    Yacine_refactor
     Given User has Registered And Logged In
-    When User Navigates to Ticket Page
-    And User is Able to Purchase Adult Ticket
-    Then User Navigates to Booking Page
+    When User is Able to Purchase Adult Ticket
     And User is Able to Book Herbivore Tour on a Weekday
     Then User Checks Out With One Safari Booked
 
 Book Both Herbivore Tour and T-Rex Rumble on a Weekday
     [Documentation]    Testing wether a user can book both safari options
-    [Tags]    test    user    book    Multiple    Safari    Yacine
+    [Tags]    test    user    book    Multiple    Safari    Yacine_refactor
     Given User has Registered And Logged In
-    When User Navigates to Ticket Page
     And User is Able to Purchase Adult Ticket
-    Then User Navigates to Booking Page
-    And User is Able to Book Herbivore Tour on a Weekday
-    And User is Able to Book T-Rex Rumble on a Weekday
+    When User is Able to Book T-Rex Rumble And Herbivore Tour on a Weekday
     Then User Checks Out With Two Safaris Booked
 
 Scenario: Successfully booking T-Rex Rumble exTreme Thrill Pack on a weekend
