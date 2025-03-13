@@ -2,7 +2,7 @@
 *** Settings ***
 Documentation    Keywords for Jurastina-Kalle park
 Library    SeleniumLibrary
-Variables   variables.py
+Variables    ${EXECDIR}/resources/util/variables.py
 Library    DateTime
 
 *** Keywords ***
@@ -36,7 +36,6 @@ User Enters Valid Credentials To Login
     Input Text    ${LOGIN_USERNAME}    ${USERNAME}
     Input Text    ${LOGIN_PASSWORD}    ${PASSWORD}
 
-
 Register Should Be Successful
     Element Should Contain    ${REG_MESSAGE}    ${EXPECTED_SUCCESS_MESSAGE}
 
@@ -47,6 +46,7 @@ User Enter Valid Password
     Input Text    ${REG_PASSWORD}    ${PASSWORD}
 
 The Browser Should Show A Required Field Message
+    User Clicks On The Register Button
     ${Message}=    Get Element Attribute    ${REG_USERNAME}    validationMessage
     Should Be Equal    ${Message}    Please fill out this field.
     Log    Browser displayed required field validation message message.
@@ -56,6 +56,7 @@ User Enters A Password That Is Too Short
     Input Text    ${REG_PASSWORD}    ${short_password}
 
 Registration Should Fail With Error Message
+    User Clicks On The Register Button
     Wait Until Page Contains    Password must be at least 8 characters long.    timeout=5s
     Log    Registration failed due to too short username and password
 
@@ -65,7 +66,6 @@ User Has Registered
     User Clicks On The Register Button
     Register Should Be Successful
     Sleep    2s    # Wait for registration to complete
-
 
 User Has Registered And Logged In
     User Has Registered
@@ -87,7 +87,6 @@ User Clicks On The Logout Button
 Logout Should Be Successful
     Handle Alert    accept
     Log    Logout was successful.
-
 
 User Navigates To Ticket Page
     Wait Until Element Is Visible    ${TICKETS_NAV}
@@ -114,28 +113,6 @@ Check Date Is Weekend
     ${day}=    Evaluate    datetime.datetime.strptime("${date}", "%Y-%m-%d").weekday()    modules=datetime
     Run Keyword If    ${day} in [5, 6]    Log    ${date} is a weekend.
     ...    ELSE    Fail    ${date} is not a weekend.
-
-User Is Able To Purchase 2 Adult VIP Ticket And 2 Child VIP Tickets
-    # Purchase Adult VIP Tickets
-    Wait Until Element Is Visible    ${TICKET_TYPE}
-    Add Tickets To Cart    Adult    2
-
-    # Purchase Child VIP Tickets
-    Add Tickets To Cart    Child    2
-
-    # Verify Cart
-    Wait Until Element Is Visible    ${CART_NAV}
-    Element Should Be Enabled    ${CHECKOUT_BUTTON}
-
-User Go To The Cart And Confirm Purchase
-    Wait Until Element Is Visible    ${CART_NAV}
-    Click Element    ${CART_NAV}
-    Wait Until Element Is Visible    ${CART_DETAILS}
-    Element Should Contain    ${CART_DETAILS}    2 VIP Adult Ticket(s) - $200
-    Element Should Contain    ${CART_DETAILS}    2 VIP Child Ticket(s) - $120
-    Element Should Be Enabled    ${CHECKOUT_BUTTON}
-    Click Button    ${CHECKOUT_BUTTON}
-    Handle Alert    accept    timeout=5s    # Handle any confirmation alert
 
 User Arrived At The Login Page
     Click Element    ${LOGIN_NAV}
@@ -236,38 +213,7 @@ User Checks Out With Two Safaris Booked
     Handle Alert    accept
 
 
-User is Able to Books T-Rex Rumble exTreme Thrill Pack on Saturday
-    ${saturday_date}=    Set Variable    2025-02-22    # Example Saturday date
-    Check Date Is Weekend    ${saturday_date}
-    Input Text    ${SAFARI_DATE}    ${saturday_date}
-    Select From List By Index    ${SAFARI_TYPE}    3
-    Wait Until Element Is Visible    ${SAFARI_SUBMIT}
-    Click Button    ${SAFARI_SUBMIT}
-    Handle Alert    accept
-    Sleep    2
-    Log    Booking 'T-Rex Rumble exTreme Thrill Pack' on Saturday.
 
-User is Able to Books T-Rex Rumble exTreme Thrill Pack on Sunday
-    ${sunday_date}=    Set Variable    2025-02-23    # Example Sunday date
-    Check Date Is Weekend    ${sunday_date}
-    Input Text    ${SAFARI_DATE}    ${sunday_date}
-    Select From List By Index    ${SAFARI_TYPE}    3
-    Wait Until Element Is Visible    ${SAFARI_SUBMIT}
-    Click Button    ${SAFARI_SUBMIT}
-    Handle Alert    accept
-    Sleep    2
-    Log    Booking 'T-Rex Rumble exTreme Thrill Pack' on Sunday.
-
-User Checks Out With VIP Tickets And Safaris Booked On The Weekend
-    Wait Until Element Is Visible    ${CART_NAV}
-    Click Element    ${CART_NAV}
-    Wait Until Element Is Visible    ${CART_DETAILS}
-    Element Should Contain    ${CART_DETAILS}    ${VIP_ADULT}
-    Element Should Contain    ${CART_DETAILS}    ${VIP_CHILD}
-    Element Should Contain    ${CART_DETAILS}    ${TREX_EXTREME}
-    Element Should Contain    ${CART_DETAILS}    ${TREX_EXTREME}
-    Click Button    ${CHECKOUT_BUTTON}
-    Handle Alert    accept
 
 
 
