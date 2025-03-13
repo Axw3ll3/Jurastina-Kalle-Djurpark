@@ -102,6 +102,12 @@ Add Tickets To Cart
     Handle Alert    accept    timeout=5s
     Sleep    1s    # Wait for cart to update
 
+User Navigates to Booking Page
+    Title Should be    Jura-Stina-Kalle Park
+    Click Element    ${SAFARI_NAV}User Navigates to Booking Page
+    Title Should be    Jura-Stina-Kalle Park
+    Click Element    ${SAFARI_NAV}
+
 Check Date Is Weekday
     [Arguments]    ${date}
     ${day}=    Evaluate    datetime.datetime.strptime("${date}", "%Y-%m-%d").weekday()    modules=datetime

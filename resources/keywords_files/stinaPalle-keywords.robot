@@ -2,8 +2,8 @@
 *** Settings ***
 Documentation    Keywords for Stina-Palle scenario
 Library    SeleniumLibrary
-Variables    ${EXECDIR}/resources/util/variables.py
-Library    DateTime
+Resource    ${EXECDIR}/resources/keywords_files/keywords.robot
+
 *** Keywords ***
 
 User is Able to Purchase Adult Ticket 
@@ -21,11 +21,6 @@ User Checks Out
     Element Should Contain    ${CART_DETAILS}    1 Regular Adult Ticket(s) - $50
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept
-
-User Navigates to Booking Page
-    Title Should be    Jura-Stina-Kalle Park
-    Click Element    ${SAFARI_NAV}
-
 
 User is Able to Book Herbivore Tour on a Weekday
     Title Should be    Jura-Stina-Kalle Park

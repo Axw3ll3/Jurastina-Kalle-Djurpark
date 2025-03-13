@@ -55,3 +55,5 @@ Scenario: Invalid Registation With Too Short Password
     When User Enters Valid Credentials
     And User Enters A Password That Is Too Short
     Then Registration Should Fail With Error Message
+
+    
