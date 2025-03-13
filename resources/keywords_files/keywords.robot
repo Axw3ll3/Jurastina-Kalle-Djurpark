@@ -104,7 +104,7 @@ Add Tickets To Cart
 
 User Navigates to Booking Page
     Title Should be    Jura-Stina-Kalle Park
-    Click Element    ${SAFARI_NAV}User Navigates to Booking Page
+    Click Element    ${SAFARI_NAV}
     Title Should be    Jura-Stina-Kalle Park
     Click Element    ${SAFARI_NAV}
 
