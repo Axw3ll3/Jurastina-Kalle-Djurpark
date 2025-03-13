@@ -2,7 +2,7 @@
 *** Settings ***
 Documentation    Keywords for Jurastina-Kalle park
 Library    SeleniumLibrary
-Variables    ${EXECDIR}/util/variables.py
+Variables    ${EXECDIR}/resources/util/variables.py
 Library    DateTime
 
 *** Keywords ***

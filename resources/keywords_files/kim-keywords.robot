@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Keywords for Kim senario
 Library    SeleniumLibrary
-Resource    ${EXECDIR}/resources/keywords.robot
+Resource    ${EXECDIR}/resources/keywords_files/keywords.robot
 
 *** Keywords ***
 

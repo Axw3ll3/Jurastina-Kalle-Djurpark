@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Automatic tests for Jurastina Kalle Park website
 Library           SeleniumLibrary
-Resource          ${EXECDIR}/resources/keywords.robot    
+Resource          ${EXECDIR}/resources/keywords_files/keywords.robot    
 
 Test Setup  Browser Is Opened To The Webpage    ${URL}  ${BROWSER}
 Test Teardown   Close All Browsers
