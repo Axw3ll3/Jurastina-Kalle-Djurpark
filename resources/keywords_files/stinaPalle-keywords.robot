@@ -43,8 +43,7 @@ User Checks Out With One Safari Booked
     Element Should Contain    ${CART_DETAILS}    ${HERBIVORE_SAFARI}
     Click Button    ${CHECKOUT_BUTTON}
     Handle Alert    accept
-
-    
+  
 User is Able to Book T-Rex Rumble And Herbivore Tour on a Weekday
     Title Should be    Jura-Stina-Kalle Park
     Click Element    ${SAFARI_NAV}
