@@ -5,7 +5,7 @@ import os
 current_directory = os.getcwd().replace('\\', '/')
 
 #Browser and URL
-URL = f"file:///{current_directory}/util/webpage-jurap/jurap.html"
+URL = f"file:///{current_directory}/webpage-jurap/jurap.html"
 BROWSER = "headlesschrome"
 
 # Locators

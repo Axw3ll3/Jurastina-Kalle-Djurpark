@@ -1,8 +1,7 @@
 *** Settings ***
 Documentation     Automatic tests for Jurastina Kalle Park website
 Library           SeleniumLibrary
-Resource          ${EXECDIR}/resources/keywords.robot
-Variables         ${EXECDIR}/util/variables.py    
+Resource          ${EXECDIR}/resources/keywords_files/keywords.robot    
 
 Test Setup  Browser Is Opened To The Webpage    ${URL}  ${BROWSER}
 Test Teardown   Close All Browsers
@@ -15,15 +14,6 @@ Scenario: Register Account:
     When User Enters Valid Credentials
     And User Clicks On The Register Button
     Then Register Should Be Successful
-
-Scenario: Buy 2 Adult and 2 Childen VIP Tickets
-    [Documentation]     Test of buying 2 adult and 2 children VIP tickets
-    [Tags]  test    user    buying    tickets   Axel    Axel_Refactor
-    Given User Has Registered And Logged In
-    When User Navigates To Ticket Page
-    And User Is Able To Purchase 2 Adult VIP Ticket And 2 Child VIP Tickets
-    Then User Go To The Cart And Confirm Purchase
-
 
 Scenario: Valid Login
     [Documentation]     Test of valid login with valid login
@@ -51,59 +41,19 @@ Scenario: Invalid Login
 
 Scenario: Invalid Registation With Empty Username
     [Documentation]    Test of invalid registration with empty username field
-    [Tags]    test    user    invalid    registration    Trang
+    [Tags]    test    user    invalid    registration    Trang    Trang_Refactor
     Given User Clicks On The Register Page
     When User Enters A Username That Is Too Short
     And User Enter Valid Password
-    And User Clicks On The Register Button
     Then The browser should Show A required Field Message
 
 
 Scenario: Invalid Registation With Too Short Password  
     [Documentation]    Test of invalid registration with too short password
-    [Tags]    test     user     invalid    registation    Trang
+    [Tags]    test     user     invalid    registation    Trang    Trang_Refactor
     Given User Clicks On The Register Page
     When User Enters Valid Credentials
     And User Enters A Password That Is Too Short
-    And User Clicks On The Register Button
     Then Registration Should Fail With Error Message
 
-Buy One Adult Ticket
-    [Documentation]    Testing if a user can buy 1 Adult ticket   
-    [Tags]    test    user    Buy    ticket    Yacine
-    Given User has Registered And Logged In
-    When User Navigates to Ticket Page 
-    Then User is Able to Purchase Adult Ticket 
-    And User Checks Out
-
-Book a Tour for a Weekday
-    [Documentation]    Testing if a user can book a Safari on a Weekday
-    [Tags]    test    user    book    Safari    Yacine
-    Given User has Registered And Logged In
-    When User Navigates to Ticket Page
-    And User is Able to Purchase Adult Ticket
-    Then User Navigates to Booking Page
-    And User is Able to Book Herbivore Tour on a Weekday
-    Then User Checks Out With One Safari Booked
-
-Book Both Herbivore Tour and T-Rex Rumble on a Weekday
-    [Documentation]    Testing wether a user can book both safari options
-    [Tags]    test    user    book    Multiple    Safari    Yacine
-    Given User has Registered And Logged In
-    When User Navigates to Ticket Page
-    And User is Able to Purchase Adult Ticket
-    Then User Navigates to Booking Page
-    And User is Able to Book Herbivore Tour on a Weekday
-    And User is Able to Book T-Rex Rumble on a Weekday
-    Then User Checks Out With Two Safaris Booked
-
-Scenario: Successfully booking T-Rex Rumble exTreme Thrill Pack on a weekend
-    [Documentation]    Test of booking safari for VIP on Saturday and Sunday
-    [Tags]    test    user    booking    safari    Trang
-    Given User Has Registered And Logged In
-    When User Navigates to Ticket Page
-    And User Is Able To Purchase 2 Adult VIP Ticket And 2 Child VIP Tickets
-    Then User Navigates to Booking Page
-    And User is Able to Books T-Rex Rumble exTreme Thrill Pack on Saturday 
-    And User is Able to Books T-Rex Rumble exTreme Thrill Pack on Sunday
-    Then User Checks Out With VIP Tickets And Safaris Booked On The Weekend
+    
